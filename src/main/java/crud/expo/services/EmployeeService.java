@@ -1,6 +1,7 @@
 package crud.expo.services;
 
 import crud.expo.Repository.EmployeeRepo;
+import crud.expo.dto.CustomerProductResponse;
 import crud.expo.models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,9 +29,13 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
-    public void delete(String name) {
+    public void delete(Integer name) {
         employeeRepo.deleteById(name);
-//        employeeRepo.deleteBylastName(name);
+    }
+
+    public List<CustomerProductResponse>getCPData(){
+        return employeeRepo.getCustomerWithProducts();
     }
 
 }
+
