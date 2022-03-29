@@ -4,17 +4,18 @@ import crud.expo.Repository.CartRepo;
 import crud.expo.Repository.ItemRepo;
 import crud.expo.models.Cart;
 import crud.expo.models.Item;
+import lombok.RequiredArgsConstructor;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class ShoppingService {
-    @Autowired
-    private CartRepo cartRepo;
-    @Autowired
-    private ItemRepo itemRepo;
+    private final CartRepo cartRepo;
+    private final ItemRepo itemRepo;
 
     public void addItem(Item item) {
         itemRepo.save(item);

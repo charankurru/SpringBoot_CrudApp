@@ -17,9 +17,8 @@ public class StudentController {
     private  StudentService studentService;
 
     @PostMapping("/addStudent")
-    public ResponseEntity<String> addItem(@RequestBody Student student){
-        this.studentService.addStudent(student);
-        return new ResponseEntity<>("Student Added Successfully !!", HttpStatus.OK);
+    public ResponseEntity<Student> addItem(@RequestBody Student student){
+        return new ResponseEntity<>(this.studentService.addStudent(student), HttpStatus.OK);
     }
 
     @PostMapping("/addStudentProfile")

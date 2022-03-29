@@ -12,11 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Teams_Table")
-public class Team {
+public class TestDummy {
     @Id
-    @GeneratedValue( strategy= GenerationType.AUTO )
-    private  int id;
-    private  String teamName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    @Column(nullable = false)
+    private String testName;
+    @Column(unique = true)
+    private String testCode;
 
 }

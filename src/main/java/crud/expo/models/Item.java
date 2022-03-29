@@ -24,7 +24,7 @@ public class Item {
     //@Column(unique = true)
     private int price;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="cart_id")
     @JsonBackReference
     private Cart cart;

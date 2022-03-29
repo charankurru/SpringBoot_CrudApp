@@ -22,7 +22,6 @@ public class ShoppingController {
 
     @PostMapping("/addItem")
     public ResponseEntity<String> addItem(@RequestBody Item item){
-        System.out.println(item.getItemId());
         this.shoppingService.addItem(item);
         return new ResponseEntity<>("Item Added Successfully !!", HttpStatus.OK);
     }

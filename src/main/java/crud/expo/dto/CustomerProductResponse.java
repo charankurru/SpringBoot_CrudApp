@@ -7,7 +7,6 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class CustomerProductResponse {
     private String name;
     private String productName;
